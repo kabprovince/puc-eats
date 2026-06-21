@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    padding: 25px 0;
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 100;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 55px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000000;
+    margin-left: 40px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.menu a.active {
+    background-color: #FDC82F;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    min-height: calc(100vh - 105px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.flex-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text {
+    box-sizing: border-box;
+    flex: 1;
+    z-index: 30;
+}
+
+.hero-text h1 {
+    font-family: 'Georgia', serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+.destaque-vermelho { color: #E32626; }
+.destaque-azul { color: #0056C6; }
+
+.hero-text p {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 35px;
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.btn-chatbot {
+    background-color: #FDC82F;
+    color: #000000;
+    border: none;
+    padding: 15px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 20;
+}
+
+.img-salada {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    margin-right: -20px;
+}
+
+.bola-azul-bg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45vw;
+    max-width: 800px;
+    min-width: 550px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- COPOS DECORATIVOS TOPO --- */
+.copo { position: absolute; z-index: 5; filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.12)); pointer-events: none; }
+.copo-azul-1 { left: -40px; top: 60px; width: 48px; transform: rotate(-12deg); }
+.copo-azul-2 { left: -25px; bottom: -10px; width: 45px; transform: rotate(-18deg); }
+.copo-verm-1 { left: 580px; top: 40px; width: 36px; transform: rotate(-15deg); }
+.copo-azul-3 { left: 590px; bottom: 200px; width: 42px; transform: rotate(12deg); }
+.copo-amarelo-1 { right: 40px; bottom: 20px; width: 58px; transform: rotate(-15deg); }
+
+
+/* ====================================================================
+   ESTRUTURA PARA DESKTOP (ALTURA DITADA PELA IMAGEM SVG)
+   ==================================================================== */
+.chatbot-section, .stats-section, .footer-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* MARGENS DE SOBREPOSIÇÃO NO COMPUTADOR */
+.chatbot-section { margin-top: 50px; }
+.stats-section { margin-top: -30px; }
+.footer-section { margin-top: -70px; }
+
+.chatbot-bg, .stats-wave-bg, .footer-wave-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+.chatbot-container, .stats-container, .footer-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 10;
+}
+
+/* ALINHAMENTOS VERTICAIS (COMPUTADOR) */
+.chatbot-container { top: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; }
+.stats-container { top: 50%; transform: translate(-50%, -50%); }
+.footer-container { top: 56%; transform: translate(-50%, -50%); }
+
+.chatbot-content h2 { font-family: 'Poppins', sans-serif; font-size: 56px; font-weight: 800; color: #FFFFFF; letter-spacing: 3px; }
+
+/* --- SEÇÃO COMO FUNCIONA --- */
+.como-funciona-section { position: relative; padding: 60px 0 100px 0; margin-top: -110px; background-color: #FFFFFF; width: 100%; z-index: 20; }
+.funciona-container { position: relative; }
+.titulo-funciona { font-family: 'Georgia', serif; font-size: 46px; font-weight: 700; color: #000000; margin-bottom: 50px; padding-left: 10px; }
+.cards-grid { display: flex; justify-content: space-between; align-items: stretch; gap: 30px; width: 100%; }
+.card-branco { background: #FFFFFF; flex: 1; display: flex; align-items: center; padding: 45px 35px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06); gap: 24px; position: relative; z-index: 10; }
+.bolinha-icone { width: 75px; height: 75px; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; }
+.bg-azul-icone { background-color: #0066E2; }
+.bg-vermelho-icone { background-color: #E32121; }
+.bg-amarelo-icone { background-color: #FFEA00; }
+.bolinha-icone img { width: 34px; height: 34px; }
+.card-textos h3 { font-size: 22px; font-weight: 700; color: #000000; margin-bottom: 8px; }
+.card-textos p { font-size: 15px; color: #444444; line-height: 1.5; }
+
+.copo-funciona { position: absolute; pointer-events: none; filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.12)); z-index: 1; }
+.copo-vermelho-2 { left: -45px; bottom: 25px; width: 52px; transform: rotate(-15deg); }
+.copo-azul-4 { right: -25px; top: 65px; width: 48px; transform: rotate(18deg); }
+
+/* --- SEÇÃO RESTAURANTES BEM AVALIADOS --- */
+.restaurantes-section { width: 100%; position: relative; padding: 150px 0 160px 0; margin-top: -30px; background-image: url('assets/bola-vermelha.svg'); background-repeat: no-repeat; background-size: 100% 100%; background-position: center; }
+.titulo-restaurantes { display: block; width: 100%; max-width: 540px; height: auto; margin-bottom: 55px; padding-left: 10px; }
+.restaurantes-grid { display: flex; justify-content: space-between; align-items: stretch; gap: 35px; width: 100%; }
+.card-restaurante { background: #FFFFFF; flex: 1; border-radius: 36px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); display: flex; flex-direction: column; }
+.foto-restaurante { width: 100%; height: 250px; object-fit: cover; display: block; }
+.card-restaurante-info { padding: 30px 35px; display: flex; flex-direction: column; }
+.card-restaurante-info h3 { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; color: #000000; margin-bottom: 10px; }
+.estrelas-row { display: flex; gap: 5px; margin-bottom: 20px; }
+.img-estrela { width: 20px; height: 20px; }
+.preco-row { display: flex; align-items: center; gap: 8px; font-size: 16px; color: #444444; font-weight: 500; }
+.img-cifrao { width: 12px; height: 18px; }
+
+/* --- SEÇÃO BENEFÍCIOS --- */
+.beneficios-section { background-color: #FFFFFF; padding: 100px 0 80px 0; position: relative; width: 100%; z-index: 20; }
+.beneficios-container { position: relative; }
+.flex-beneficios { display: flex; align-items: center; justify-content: space-between; gap: 80px; width: 100%; }
+.beneficios-media { flex: 1; display: flex; justify-content: flex-start; }
+.img-celular { width: 100%; max-width: 530px; height: auto; }
+.beneficios-content { flex: 1.1; display: flex; flex-direction: column; align-items: flex-start; }
+.titulo-escolha { height: 75px; width: auto; margin-bottom: 40px; max-width: 100%; }
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 22px; width: 100%; }
+.checklist li { display: flex; align-items: center; justify-content: flex-start; gap: 20px; width: 100%; }
+.icon-check { width: 28px; height: 28px; flex-shrink: 0; display: block; }
+.txt-check { height: 18px; width: auto; display: block; }
+
+.copo-beneficio { position: absolute; z-index: 5; filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.12)); pointer-events: none; }
+.copo-ultimo-verm { right: 180px; top: 50px; width: 46px; transform: rotate(15deg); }
+.copo-ultimo-amarelo { right: 40px; bottom: 120px; width: 54px; transform: rotate(-22deg); }
+
+/* --- MATRIZ DE ESTATÍSTICAS E RODAPÉ (DENTRO DA ESTRUTURA GLOBAL) --- */
+.stats-grid { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.stat-item { display: flex; align-items: center; gap: 24px; flex: 1; justify-content: center; }
+.stat-icon { width: 65px; height: 65px; flex-shrink: 0; }
+.stat-text-group { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.stat-number { height: 48px; width: auto; display: block; }
+.stat-label { width: 160px; height: auto; display: block; }
+.barra-branca { height: 65px; width: auto; opacity: 0.6; }
+
+.footer-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.img-nunca-mais { height: 52px; width: auto; display: block; }
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.img-use-o { height: 14px; width: auto; margin-right: 5px; display: block; }
+.img-logo-branco { height: 65px; width: auto; display: block; }
+
+
+/* --- CHATBOT --- */
+.chatbot-content { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 700px; }
+.chatbot-content h2 { font-family: 'Poppins', sans-serif; font-size: 56px; font-weight: 800; color: #FFFFFF; letter-spacing: 3px; margin-bottom: 10px; }
+.chatbot-subtitulo { color: rgba(255,255,255,0.85); font-size: 16px; text-align: center; margin-bottom: 28px; }
+
+.chat-box { width: 100%; background: #FFFFFF; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.18); overflow: hidden; display: flex; flex-direction: column; }
+
+.chat-messages { padding: 24px 24px 16px; display: flex; flex-direction: column; gap: 14px; min-height: 220px; max-height: 320px; overflow-y: auto; scroll-behavior: smooth; }
+.chat-messages::-webkit-scrollbar { width: 5px; }
+.chat-messages::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 10px; }
+
+.chat-bubble { max-width: 80%; padding: 13px 18px; border-radius: 18px; font-size: 15px; line-height: 1.55; word-break: break-word; }
+.chat-bubble.bot { background: #F0F4FF; color: #111; border-bottom-left-radius: 4px; align-self: flex-start; }
+.chat-bubble.user { background: #0056C6; color: #fff; border-bottom-right-radius: 4px; align-self: flex-end; }
+
+/* Indicador de digitação */
+.chat-bubble.typing { display: flex; align-items: center; gap: 6px; padding: 16px 20px; }
+.chat-bubble.typing span { width: 8px; height: 8px; background: #0056C6; border-radius: 50%; animation: bounce 1.2s infinite; }
+.chat-bubble.typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-bubble.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-7px); } }
+
+.chat-input-area { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-top: 1px solid #F0F0F0; background: #fff; }
+.chat-input { flex: 1; border: 1.5px solid #E0E0E0; border-radius: 30px; padding: 12px 18px; font-size: 15px; font-family: 'Poppins', sans-serif; outline: none; transition: border-color 0.2s; color: #111; }
+.chat-input:focus { border-color: #0056C6; }
+.chat-send-btn { background: #0056C6; color: #fff; border: none; border-radius: 50%; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: background 0.2s, transform 0.1s; }
+.chat-send-btn:hover { background: #004AAD; }
+.chat-send-btn:active { transform: scale(0.93); }
+.chat-send-btn:disabled { background: #A0B4D6; cursor: not-allowed; }
+
+@media (max-width: 768px) {
+    .chatbot-content { max-width: 100%; }
+    .chatbot-content h2 { font-size: 32px; }
+    .chat-messages { max-height: 240px; }
+    .chat-bubble { max-width: 90%; font-size: 14px; }
+}
+
+/* --- ANIMAÇÕES REVEAL --- */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.cards-grid .card-branco:nth-child(1) { transition-delay: 0.1s; }
+.cards-grid .card-branco:nth-child(2) { transition-delay: 0.25s; }
+.cards-grid .card-branco:nth-child(3) { transition-delay: 0.4s; }
+.restaurantes-grid .card-restaurante:nth-child(1) { transition-delay: 0.1s; }
+.restaurantes-grid .card-restaurante:nth-child(2) { transition-delay: 0.25s; }
+.restaurantes-grid .card-restaurante:nth-child(3) { transition-delay: 0.4s; }
+
+
+/* =======================================================================
+   == 📱 ESTRUTURA PARA TELEMÓVEL (ALTURA DITADA PELO CONTEÚDO) ==
+   ======================================================================= */
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+
+    /* NAVBAR */
+    .flex-nav { flex-direction: column; gap: 15px; }
+    .logo { height: 45px; }
+    .menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .menu a { margin-left: 0; padding: 5px 10px; font-size: 14px; }
+
+    /* HERO: Limpo, sem onda azul para garantir leitura e fluxo perfeito */
+    .flex-hero { flex-direction: column; text-align: center; gap: 40px; margin-top: 40px; }
+    .hero-text h1 { font-size: 38px; line-height: 1.25; margin-bottom: 20px; }
+    .hero-text p { font-size: 16px; margin: 0 auto 30px auto; }
+    .img-salada { width: 100%; max-width: 280px; margin: 0 auto; display: block; }
+    .bola-azul-bg { display: none !important; }
+
+    /* COMO FUNCIONA */
+    .como-funciona-section { padding: 60px 0; margin-top: 0; }
+    .titulo-funciona { font-size: 32px; text-align: center; margin-bottom: 30px; padding-left: 0; }
+    .cards-grid { flex-direction: column; gap: 20px; }
+    .card-branco { flex-direction: column; text-align: center; padding: 30px 20px; }
+
+    /* RESTAURANTES */
+    .restaurantes-section { padding: 100px 0; margin-top: 0; background-size: cover; background-color: transparent !important; }
+    .titulo-restaurantes { max-width: 90%; margin: 0 auto 30px auto; display: block; }
+    .restaurantes-grid { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 15px; scroll-snap-type: x mandatory; }
+    .card-restaurante { min-width: 260px; scroll-snap-align: center; }
+
+    /* BENEFÍCIOS */
+    .beneficios-section { padding: 60px 0; }
+    .flex-beneficios { flex-direction: column; gap: 40px; text-align: center; }
+    .beneficios-content { align-items: center; }
+    .titulo-escolha { height: auto; max-width: 90%; margin: 0 auto 30px auto; }
+    .img-celular { max-width: 260px; margin: 0 auto; }
+    .checklist li { flex-direction: row; justify-content: flex-start; text-align: left; gap: 15px; }
+    .txt-check { height: auto; width: 100%; max-width: 240px; }
+
+    /* ====================================================================
+       == RESOLUÇÃO DEFINITIVA: ONDAS ESTATÍSTICAS E RODAPÉ ==
+       ==================================================================== */
+    
+    /* 1. As secções passam a ser blocos com preenchimento (padding) */
+    .chatbot-section { display: block; padding: 120px 20px; margin-top: 0; }
+    .stats-section { display: block; padding: 120px 20px; margin-top: 0; }
+    .footer-section { display: block; padding: 120px 20px 80px 20px; margin-top: 0; }
+
+    /* 2. O conteúdo interno volta a fluir livremente, sem sobreposições */
+    .chatbot-container, .stats-container, .footer-container { 
+        position: relative; 
+        top: 0; left: 0; 
+        transform: none; 
+    }
+
+    /* 3. A imagem SVG cobre todo o bloco preenchido, mantendo as ondas cima/baixo */
+    .chatbot-bg, .stats-wave-bg, .footer-wave-bg { 
+        position: absolute; 
+        top: 0; left: 0; 
+        width: 100%; height: 100%; 
+        object-fit: cover; 
+        object-position: center; 
+    }
+
+    /* CHATBOT */
+    .chatbot-container { display: flex; justify-content: center; }
+    .chatbot-content h2 { font-size: 32px; }
+
+    /* STATS ALINHAMENTO */
+    .stats-grid { flex-direction: column; gap: 40px; align-items: center; }
+    .stat-item { flex-direction: column; text-align: center; gap: 10px; }
+    .stat-text-group { align-items: center; }
+    .stat-label { max-width: 200px; }
+    .barra-branca { display: none !important; }
+
+    /* FOOTER ALINHAMENTO */
+    .footer-flex { flex-direction: column; gap: 30px; text-align: center; }
+    .footer-right { align-items: center; gap: 10px; }
+    .img-nunca-mais { height: auto; max-width: 90%; margin: 0 auto; }
+    .img-logo-branco { height: 45px; }
+
+    /* Esconde elementos puramente estéticos no telemóvel */
+    .copo, .copo-funciona, .copo-beneficio { display: none !important; }
+}
